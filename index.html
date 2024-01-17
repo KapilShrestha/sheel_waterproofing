@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./src/styles/main.css">
+  <title>Vite + TS</title>
+</head>
+
+<body class="">
+  <nav class="z-100">
+    <div class="navbar bg-indigo-900">
+      <div class="navbar-start">
+        <div class="dropdown ">
+          <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+            </svg>
+          </div>
+          <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[2] p-2 shadow bg-indigo-900 rounded-box w-52">
+            <li><a>Home</a></li>
+            <li><a>About</a></li>
+            <li><a>Services</a></li>
+            <li class="bg-indigo-900">
+              <a>Our Products</a>
+              <ul class="p-2">
+                <li><a>Submenu 1</a></li>
+                <li><a>Submenu 2</a></li>
+              </ul>
+            </li>
+            <li><a>Item 3</a></li>
+          </ul>
+        </div>
+        <a class="btn btn-ghost text-xl">Sheel Waterproofing</a>
+      </div>
+      <div class="navbar-center hidden lg:flex z-20">
+        <ul class="menu menu-horizontal px-1">
+          <li><a>Home</a></li>
+          <li><a>About</a></li>
+          <li><a>Services</a></li>
+
+          <li>
+            <details>
+              <summary>Our Products</summary>
+              <ul class="p-2 bg-indigo-900">
+                <li><a>Concrete Admixture</a></li>
+                <li><a>Protection And Repair</a></li>
+              </ul>
+            </details>
+          </li>
+          <li><a>Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="navbar-end">
+        <!-- <a class="btn">Button</a> -->
+        <div class="drawer-content">
+          <!-- Page content here -->
+          <label for="my-drawer" class="btn btn-primary drawer-button">Open drawer</label>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Drawer Sidebar from left -->
+  <div class="drawer z-30">
+    <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+
+    <div class="drawer-side">
+      <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+      <ul class="menu p-4 w-80 min-h-full bg-indigo-900 text-base-content">
+        <!-- Sidebar content here -->
+        <li><a>Sidebar Item 1</a></li>
+        <li><a>Sidebar Item 2</a></li>
+
+      </ul>
+    </div>
+  </div>
+
+  <!-- Hero Section Starts Here -->
+
+
+
+
+  <div class="px-8 lg:px-32 ">
+
+    <!-- About Start -->
+    <p class="pt-10 text-xl lg:text-2xl font-medium">About Us</p>
+    <div>
+      <p class="pt-10 text-xl lg:text-2xl font-medium"> Quality And Integrity</p>
+      <p class="pt-5 text-md lg:text-xl text-justify">Established in 2018, Sheel Waterproofing has been at the forefront
+        of the waterproofing industry for over a decade. Founded by Mr. Shankar Karki, our company began with a vision
+        to provide effective and reliable waterproofing solutions to protect properties from water damage. With a team
+        of skilled professionals and a commitment to innovation, we have grown into a trusted name in the industry. Our
+        journey continues as we strive to ensure dry and secure properties for all our valued clients.</p>
+
+      <div class="pt-10 flex flex-col items-center gap-8 lg:flex-row lg:justify-between">
+        <!-- card 1 -->
+        <div class="card w-60 h-52 bg-indigo-900 shadow-xl ">
+          <div class="card-body flex items-center justify-center">
+            <div class="">
+              <h2 class="card-title">10 +</h2>
+            </div>
+            <div class="">
+              <p>Years of Experience</p>
+            </div>
+          </div>
+        </div>
+        <!-- card 1 -->
+        <div class="card w-60 h-52 bg-indigo-900 shadow-xl ">
+          <div class="card-body flex items-center justify-center">
+            <div class="">
+              <h2 class="card-title">500+</h2>
+            </div>
+            <div class="">
+              <p>Project Completed</p>
+            </div>
+          </div>
+        </div>
+        <!-- card 1 -->
+        <div class="card w-60 h-52 bg-indigo-900 shadow-xl ">
+          <div class="card-body flex items-center justify-center">
+            <div class="">
+              <h2 class="card-title">500+</h2>
+            </div>
+            <div class="">
+              <p>Satisfied Clients</p>
+            </div>
+          </div>
+        </div>
+        <!-- card 1 -->
+        <div class="card w-60 h-52 bg-indigo-900 shadow-xl ">
+          <div class="card-body flex items-center justify-center">
+            <div class="">
+              <h2 class="card-title">50+</h2>
+            </div>
+            <div class="">
+              <p>Active Workers</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- Our services Start -->
+    <div>
+      <p class="pt-10 text-xl lg:text-2xl font-medium">Our Services</p>
+      <div class="flex justify-between gap-8">
+        <div class="card w-96 bg-indigo-100 shadow-xl">
+          <figure><img src="./src/assets/img/carousel_1.jpg" alt="Shoes" /></figure>
+          <div class="card-body">
+            <h2 class="card-title">Cementitious Waterproofing</h2>
+            <p class="text-justify">This method involves the use of cement-based coatings or additives to create a waterproof barrier. It is often used for concrete structures and can be applied to both the positive and negative sides of walls.</p>
+          </div>
+        </div>
+        <div class="card w-96 bg-indigo-100 shadow-xl">
+          <figure><img src="./src/assets/img/carousel_1.jpg" alt="Shoes" /></figure>
+          <div class="card-body">
+            <h2 class="card-title">Cementitious Waterproofing</h2>
+            <p class="text-justify">This method involves the use of cement-based coatings or additives to create a waterproof barrier. It is often used for concrete structures and can be applied to both the positive and negative sides of walls.</p>
+          </div>./src/assets/img/carousel_1
+        </div>
+        <div class="card w-96 bg-indigo-100 shadow-xl">
+          <figure><img src="./src/assets/img/carousel_1.jpg" alt="Shoes" /></figure>
+          <div class="card-body">
+            <h2 class="card-title">Cementitious Waterproofing</h2>
+            <p class="text-justify">This method involves the use of cement-based coatings or additives to create a waterproof barrier. It is often used for concrete structures and can be applied to both the positive and negative sides of walls.</p>
+          </div>
+        </div>
+        <div class="card w-96 bg-indigo-100 shadow-xl">
+          <figure><img src="./src/assets/img/carousel_1.jpg" alt="Shoes" /></figure>
+          <div class="card-body">
+            <h2 class="card-title">Cementitious Waterproofing</h2>
+            <p class="text-justify">This method involves the use of cement-based coatings or additives to create a waterproof barrier. It is often used for concrete structures and can be applied to both the positive and negative sides of walls.</p>
+          </div>
+        </div>
+
+      </div>
+      
+
+    </div>
+    
+
+  </div>
+
+  <!-- About End -->
+
+
+  <!-- Our Services Starts -->
+
+  <!-- Our Services Ends -->
+
+
+  <!-- Hero Section Ends Here -->
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
