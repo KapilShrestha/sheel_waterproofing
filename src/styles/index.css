@@ -6,3 +6,36 @@
   [x-show] {
     display: block !important;
   }
+
+  .custom__divider{
+    z-index: 0;
+  }
+
+  .custom__divider h1 {
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 1.5em;
+    padding-bottom: 15px;
+    position: relative;
+  }
+
+  .custom__divider h1:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 5px;
+    width: 55px;
+    background-color: #4A148C;
+  }
+  .custom__divider h1:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    height: 1px;
+    width: 95%;
+    max-width: 255px;
+    background-color: #333;
+  }

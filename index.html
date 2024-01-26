@@ -20,8 +20,9 @@
 </head>
 
 <body class="font-montserrat">
-  <nav class="z-100">
-    <div class="navbar bg-indigo-900">
+  <!-- navbar starts -->
+  <nav class="z-10 fixed w-[100%]">
+    <div class="navbar bg-purple-900">
       <div class="navbar-start">
         <div class="dropdown ">
           <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -30,18 +31,40 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
             </svg>
           </div>
-          <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[2] p-2 shadow bg-indigo-900 rounded-box w-52">
-            <li><a>Home</a></li>
-            <li><a>About</a></li>
-            <li><a>Services</a></li>
-            <li class="bg-indigo-900">
-              <a>Our Products</a>
-              <ul class="p-2">
-                <li><a>Submenu 1</a></li>
-                <li><a>Submenu 2</a></li>
-              </ul>
-            </li>
-            <li><a>Item 3</a></li>
+          <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[2] p-2 shadow bg-purple-900 rounded-box w-60">
+              <li><a>Home</a></li>
+              <li><a>About</a></li>
+              <li><a>Services</a></li>
+    
+              <li>
+                <details>
+                  <summary>Our Products</summary>
+                  <ul class="p-2">
+                    <details x-data="{ open: false }" class="p-2">
+                      <summary @click="open = !open" class="cursor-pointer">Concrete Admixture</summary>
+                      <ul class="p-2 nested-list" x-show="open">
+                        <li class="navbar-item cursor-pointer" data-page="./pages/vista_iwa.html"><a>Vista - IWA</a></li>
+                        <li class="navbar-item cursor-pointer"><a href="./pages/vista_no_1.html">Vista no 1</a></li>
+                        <li class="navbar-item cursor-pointer"><a href="./pages/vista_no_2.html">Vista no 2</a></li>
+                        <li class="navbar-item cursor-pointer"><a href="./pages/vista_no_3.html">Vista no 3</a></li>
+                      </ul>
+                    </details>
+                    <details x-data="{ open: false }" class="p-2">
+                      <summary @click="open = !open" class="cursor-pointer">Protection and Repair</summary>
+                      <ul class="p-2 nested-list" x-show="open">
+                        <li class="navbar-item cursor-pointer" data-page="./pages/vista_super_latex.html"><a >Vista Super Latex - SBR</a></li>
+                        <li class="navbar-item cursor-pointer" data-page="./pages/vista_supercrete.html"><a>Vista Supercrete</a></li>
+                        <li class="navbar-item cursor-pointer" data-page="./pages/vista_rust_stop.html"><a>Vista Rust Stop</a></li>
+                        <li class="navbar-item cursor-pointer" data-page="./pages/vista_damp_coat.html"><a>Vista Damp Coat</a></li>
+                      </ul>
+                    </details>
+    
+    
+                  </ul>
+                </details>
+              </li>
+              <li><a>Contact Us</a></li>
+            
           </ul>
         </div>
         <a class="btn btn-ghost text-xl">Sheel Waterproofing</a>
@@ -53,29 +76,29 @@
           <li><a>Services</a></li>
 
           <li>
-            <details >
-              <summary >Our Products</summary>
-              <ul class="p-2 bg-indigo-900">
+            <details>
+              <summary>Our Products</summary>
+              <ul class="p-2 ">
                 <details x-data="{ open: false }" class="p-2">
                   <summary @click="open = !open" class="cursor-pointer">Concrete Admixture</summary>
-                  <ul class="p-2 bg-indigo-900 nested-list" x-show="open">
-                    <li><a href="./pages/vista_iwa.html">Vista - IWA</a></li>
-                    <li><a href="#">Vista no 1</a></li>
-                    <li><a href="#">Vista no 2</a></li>
-                    <li><a href="#">Vista no 3</a></li>
+                  <ul class="p-2  nested-list" x-show="open">
+                    <li class="navbar-item cursor-pointer" data-page="./pages/vista_iwa.html"><a>Vista - IWA</a></li>
+                    <li class="navbar-item cursor-pointer"><a href="./pages/vista_no_1.html">Vista no 1</a></li>
+                    <li class="navbar-item cursor-pointer"><a href="./pages/vista_no_2.html">Vista no 2</a></li>
+                    <li class="navbar-item cursor-pointer"><a href="./pages/vista_no_3.html">Vista no 3</a></li>
                   </ul>
                 </details>
                 <details x-data="{ open: false }" class="p-2">
                   <summary @click="open = !open" class="cursor-pointer">Protection and Repair</summary>
-                  <ul class="p-2 bg-indigo-900 nested-list" x-show="open">
-                    <li><a href="">Vista Super Latex - SBR</a></li>
-                    <li><a href="#">Vista Supercrete</a></li>
-                    <li><a href="#">Vista Rust Stop</a></li>
-                    <li><a href="#">Vista Damp Coat</a></li>
+                  <ul class="p-2 nested-list" x-show="open">
+                    <li class="navbar-item cursor-pointer" data-page="./pages/vista_super_latex.html"><a >Vista Super Latex - SBR</a></li>
+                    <li class="navbar-item cursor-pointer" data-page="./pages/vista_supercrete.html"><a>Vista Supercrete</a></li>
+                    <li class="navbar-item cursor-pointer" data-page="./pages/vista_rust_stop.html"><a>Vista Rust Stop</a></li>
+                    <li class="navbar-item cursor-pointer" data-page="./pages/vista_damp_coat.html"><a>Vista Damp Coat</a></li>
                   </ul>
                 </details>
-                
-                
+
+
               </ul>
             </details>
           </li>
@@ -140,308 +163,12 @@
     </div>
   </div>
 
-  <!-- Hero Section Starts Here -->
+  <!-- contents of different pages -->
+  <div id="insertedContent">
 
-
-
-
-  <div class="px-8 lg:px-32 ">
-
-    <!-- About Start -->
-    <p class="pt-10 pb-5 text-xl lg:text-2xl font-medium">About Us</p>
-    <div>
-      <div class="flex-col justify-center lg:flex lg:flex-row lg:items-start lg:justify-start lg:gap-4">
-        <div class="lg:w-1/2">
-          <figure><img src="./src/assets/img/img_service_bituminous_coating.jpeg" alt=""></figure>
-        </div>
-        <div class="lg:w-1/2">
-          <p class=" text-xl lg:text-2xl font-medium"> Quality And Integrity</p>
-          <p class="pt-5 text-md lg:text-xl text-justify">Established in 2018, Sheel Waterproofing has been at the
-            forefront
-            of the waterproofing industry for over a decade. Founded by Mr. Shankar Karki, our company began with a
-            vision
-            to provide effective and reliable waterproofing solutions to protect properties from water damage. With a
-            team
-            of skilled professionals and a commitment to innovation, we have grown into a trusted name in the
-            industry.
-            Our
-            journey continues as we strive to ensure dry and secure properties for all our valued clients.
-
-            Established in 2018, Sheel Waterproofing has been at the forefront of the waterproofing industry for over a
-            decade. Founded by Mr. Shankar Karki, our company began with a vision to provide effective and reliable
-            waterproofing solutions to protect properties from water damage. With a team of skilled professionals and a
-            commitment to innovation, we have grown into a trusted name in the industry. Our journey continues as we
-            strive to ensure dry and secure properties for all our valued clients.
-
-
-
-          </p>
-        </div>
-      </div>
-
-      <div class=" pt-10 flex justify-center gap-10 flex-wrap ">
-        <!-- card 1 -->
-        <div
-          class="card w-60 h-52 bg-indigo-900 shadow-xl hover:scale-105 transition-all duration-300 ease-in-out transform-gpu hover:bg-sky-900 ">
-          <div class="card-body flex items-center justify-center">
-            <div class="">
-              <h2 class="card-title">10 +</h2>
-            </div>
-            <div class="">
-              <p>Years of Experience</p>
-            </div>
-          </div>
-        </div>
-        <!-- card 2 -->
-        <div
-          class="card w-60 h-52 bg-indigo-900 shadow-xl hover:scale-105 transition-all duration-300 ease-in-out transform-gpu hover:bg-sky-900 ">
-          <div class="card-body flex items-center justify-center">
-            <div class="">
-              <h2 class="card-title">500+</h2>
-            </div>
-            <div class="">
-              <p>Project Completed</p>
-            </div>
-          </div>
-        </div>
-        <!-- card 3 -->
-        <div
-          class="card w-60 h-52 bg-indigo-900 shadow-xl hover:scale-105 transition-all duration-300 ease-in-out transform-gpu hover:bg-sky-900 ">
-          <div class="card-body flex items-center justify-center">
-            <div class="">
-              <h2 class="card-title">500+</h2>
-            </div>
-            <div class="">
-              <p>Satisfied Clients</p>
-            </div>
-          </div>
-        </div>
-        <!-- card 4 -->
-        <div
-          class="card w-60 h-52 bg-indigo-900 shadow-xl hover:scale-105 transition-all duration-300 ease-in-out transform-gpu hover:bg-sky-900 ">
-          <div class="card-body flex items-center justify-center">
-            <div class="">
-              <h2 class="card-title">50+</h2>
-            </div>
-            <div class="">
-              <p>Active Workers</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <!-- About End -->
   </div>
 
-  <!-- Our services Start -->
-  <div class="px-8 lg:px-32">
-    <div class="">
-      <p class="pt-10 pb-5 text-xl lg:text-2xl font-medium text-center lg:text-left">Our Services</p>
-    </div>
-    <div class="flex flex-wrap justify-center gap-12 lg:w-104">
-
-
-      <!-- service card 1 -->
-      <div
-        class="card md:w-96  bg-white text-black shadow-xl  hover:scale-105 transition-all duration-300 ease-in-out transform-gpu  cursor-pointer ">
-        <div class="card-body">
-          <figure class="rounded-md"><img src="./src/assets/img/img_service_cementitious_waterproofing.jpeg"
-              alt="Shoes" />
-          </figure>
-          <h2 class="text-center text-lg font-bold">
-            Cementitious Waterproofing
-          </h2>
-          <p class="text-justify text-sm">This method involves the use of cement-based coatings or additives to create
-            a
-            waterproof barrier. It is often used for concrete structures and can be applied to both the positive and
-            negative sides of walls.</p>
-        </div>
-      </div>
-      <!-- service card 2 -->
-      <div
-        class="card md:w-96 bg-white text-black shadow-xl hover:scale-105 transition-all duration-300 ease-in-out transform-gpu cursor-pointer">
-        <div class="card-body">
-          <figure class="rounded-md"><img src="./src/assets/img/img_service_bituminous_coating.jpeg" alt="Shoes" />
-          </figure>
-          <h2 class="text-center text-lg font-bold">
-            Liquid Waterproofing Membrane
-          </h2>
-          <p class="text-justify text-sm">Liquid-applied waterproofing membranes are flexible coatings that can be
-            applied directly onto surfaces such as roofs, walls, and foundations. They are often used for their ease
-            of
-            application and ability to conform to irregular shapes.</p>
-        </div>
-      </div>
-      <!-- service card 3 -->
-      <div
-        class="card md:w-96 bg-white text-black shadow-xl hover:scale-105 transition-all duration-300 ease-in-out transform-gpu  cursor-pointer">
-        <div class="card-body">
-          <figure class="rounded-md"><img src="./src/assets/img/img_service_cementitious_waterproofing.jpeg"
-              alt="Shoes" />
-          </figure>
-          <h2 class="text-center text-lg font-bold">
-            Bituminous Coating Waterproofing
-          </h2>
-          <p class="text-justify text-sm">Bituminous coatings, such as asphalt or coal tar, are used for waterproofing
-            flat roofs and foundations. These materials are applied in liquid form and then solidify to create a
-            durable
-            waterproof layer.</p>
-        </div>
-      </div>
-      <!-- service card 4 -->
-      <div
-        class="card md:w-96 bg-white text-black shadow-xl hover:scale-105 transition-all duration-300 ease-in-out transform-gpu cursor-pointer">
-        <div class="card-body">
-          <figure class="rounded-md"><img src="./src/assets/img/img_service_cementitious_waterproofing.jpeg"
-              alt="Shoes" />
-          </figure>
-          <h2 class="text-center text-lg font-bold">
-            Sheet Membranes
-          </h2>
-          <p class="text-justify text-sm">Sheet membranes, typically made of materials like bitumen, PVC, or rubber,
-            are
-            applied to surfaces by rolling out sheets and sealing the seams. They are commonly used for roofing and
-            below-grade waterproofing.</p>
-        </div>
-      </div>
-
-
-
-      <!--service card 5 -->
-      <div
-        class="card md:w-96 bg-white text-black shadow-xl hover:scale-105 transition-all duration-300 ease-in-out transform-gpu cursor-pointer">
-        <div class="card-body">
-          <figure class="rounded-md"><img src="./src/assets/img/img_service_cementitious_waterproofing.jpeg"
-              alt="Shoes" />
-          </figure>
-          <h2 class="text-center text-lg font-bold">
-            Polyurethane Waterproofing
-          </h2>
-          <p class="text-justify text-sm">Polyurethane coatings are flexible and provide excellent waterproofing for a
-            variety of surfaces, including roofs, balconies, and concrete structures. They are known for their
-            durability and resistance to UV radiation..</p>
-        </div>
-      </div>
-      <!-- service card 6 -->
-      <div
-        class="card md:w-96 bg-white text-black shadow-xl hover:scale-105 transition-all duration-300 ease-in-out transform-gpu cursor-pointer">
-        <div class="card-body">
-          <figure class="rounded-md"><img src="./src/assets/img/img_service_cementitious_waterproofing.jpeg"
-              alt="Shoes" />
-          </figure>
-          <h2 class="text-center text-lg font-bold">
-            Roof Waterproofing Systems
-          </h2>
-          <p class="text-justify text-sm">Roof waterproofing systems are protective measures applied to roofs to
-            prevent
-            water infiltration and damage. These systems typically involve the application of waterproof membranes,
-            coatings, or sealants to create a barrier against rain, snow, and moisture.</p>
-        </div>
-      </div>
-      <!-- service card 7 -->
-      <div
-        class="card md:w-96 bg-white text-black shadow-xl hover:scale-105 transition-all duration-300 ease-in-out transform-gpu cursor-pointer">
-        <div class="card-body">
-          <figure class="rounded-md"><img src="./src/assets/img/img_service_cementitious_waterproofing.jpeg"
-              alt="Shoes" />
-          </figure>
-          <h2 class="text-center text-lg font-bold">
-            Injection Waterproofing
-          </h2>
-          <p class="text-justify text-sm">This method involves injecting specialized materials, like polyurethane or
-            epoxy, into cracks and voids in structures to seal them and prevent water infiltration.</p>
-        </div>
-      </div>
-      <!-- service card 8 -->
-      <div
-        class="card md:w-96 bg-white text-black shadow-xl hover:scale-105 transition-all duration-300 ease-in-out transform-gpu cursor-pointer">
-        <div class="card-body">
-          <figure class="rounded-md"><img src="./src/assets/img/img_service_cementitious_waterproofing.jpeg"
-              alt="Shoes" />
-          </figure>
-          <h2 class="text-center text-lg font-bold">
-            Geomembranes
-          </h2>
-          <p class="text-justify text-sm">Geomembranes are synthetic liners made from materials like PVC, HDPE, or
-            EPDM.
-            They are used in applications such as lining ponds, landfills, and artificial lakes to prevent water
-            seepage.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Our Services Ends -->
-  <!-- Hero Section Ends Here -->
-
-  <!-- words from our ceo starts -->
-  <div class="px-8 lg:px-32 mt-10 grid grid-cols-12 bg-purple-900 p-4">
-    <div class="col-span-12 lg:col-span-4">
-      <figure class="rounded-lg">
-        <img src="./src/assets/img/img_service_bituminous_coating.jpeg" alt="">
-      </figure>
-    </div>
-    <div class="col-span-12 lg:col-span-7 lg:col-start-6">
-      <div class="rounded-lg ">
-        <div>
-          <p class="text-center">Words From Our CEO</p>
-        </div>
-        <div class="text-justify">
-          <p>Dear Valued Customers, Welcome to Sheel Waterproofing, where excellence meets waterproofing expertise!
-            As the CEO, I'm proud to lead a team dedicated to providing cutting-edge solutions for your waterproofing
-            needs.
-          </p>
-          <br>
-          <p>Our commitment to quality, innovation, and customer satisfaction is unmatched.
-            Explore our website to discover how Sheel Waterproofing can protect your investments and ensure a watertight
-            future for your projects.
-          </p>
-          <br>
-          <p>Best regards,</p>
-          <p>Shankar Karki</p>
-          <p>CEO, Sheel Waterproofing Nepal Pvt. Ltd.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-  <!-- words from our ceo ends -->
-
-
-
-
-
-
-
-  <!-- contact us starts -->
-  <div class="bg-slate-200 pb-10">
-    <div class="px-8 lg:px-32">
-      <p class=" text-xl lg:text-2xl font-medium">Contact Us</p>
-    </div>
-    <div class="md:flex md:flex-row md:justify-center md:items-center gap-4  px-8 lg:px-32 ">
-      <div class="md:w-1/2">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3533.071834163048!2d85.2975386!3d27.6841746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb196a27a33541%3A0x6f2ba68dd5c4ed69!2sYuki%20Enterprises%20Pvt%20Ltd!5e0!3m2!1sen!2snp!4v1705600583898!5m2!1sen!2snp"
-          width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-
-      <div class="md:w-1/2">
-        <div>
-          <p class="text-xl lg:text-2xl text-center font-medium ">Enquire Now</p>
-        </div>
-        <form action="mailto:yukienterprises@gmail.com" method="get" class="flex flex-col gap-4">
-          <input type="text" placeholder="Name" class="bg-white input input-bordered w-full " />
-          <input type="email" placeholder="Email" class="bg-white input input-bordered w-full "
-            pattern="^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$" required />
-          <input type="tel" pattern="[0-9]{10}" placeholder="Phone Number"
-            class="bg-white input input-bordered w-full" />
-          <input type="text" placeholder="Message" class="bg-white input input-bordered input-lg w-full " />
-          <button class="bg-purple-900 btn btn-neutral font-bold">Send Message</button>
-        </form>
-      </div>
-    </div>
-  </div>
+  
 
   <!-- footer starts -->
   <footer class="footer p-10 text-base-content bg-purple-900  pt-10 px-8 lg:px-32">
@@ -476,8 +203,7 @@
     </nav>
   </footer>
   <!-- footer ends -->
-  </div>
-  </div>
+
 
   <script type="module" src="/src/main.ts"></script>
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
