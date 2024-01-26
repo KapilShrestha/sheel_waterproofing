@@ -1,4 +1,4 @@
-// main.ts
+// src/main.ts
 
 document.addEventListener('DOMContentLoaded', function () {
     // Function to fetch and insert content from a page
@@ -34,5 +34,13 @@ document.addEventListener('DOMContentLoaded', function () {
   
     // Load default content on page load
     fetchAndInsertContent('../pages/index_content.html');
+    
   });
+
+
+
+
   
+  
+    
+ 

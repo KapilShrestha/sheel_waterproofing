@@ -1,3 +1,17 @@
+.title-text-size{
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 2px; 
+}
+.content-text-size{
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px; 
+    word-spacing: 5px;
+    line-height: 1.6;
+}
+
+
 /* Additional styles for hiding/showing the nested list */
 .nested-list {
     display: none;
@@ -37,5 +51,8 @@
     height: 1px;
     width: 95%;
     max-width: 255px;
-    background-color: #333;
+    background-color: #4A148C;
   }
+
+ 
+
