@@ -1,0 +1,8 @@
+/* Additional styles for hiding/showing the nested list */
+.nested-list {
+    display: none;
+  }
+
+  [x-show] {
+    display: block !important;
+  }

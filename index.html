@@ -8,13 +8,18 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@500&family=Montserrat:wght@300&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./src/styles/index.css">
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" />
+
 
   <link rel="stylesheet" href="./src/styles/main.css">
   <title>Homepage &#x2022; Sheel Waterproofing</title>
 </head>
 
-<body class="font-exo">
+<body class="font-montserrat">
   <nav class="z-100">
     <div class="navbar bg-indigo-900">
       <div class="navbar-start">
@@ -48,11 +53,29 @@
           <li><a>Services</a></li>
 
           <li>
-            <details>
-              <summary>Our Products</summary>
+            <details >
+              <summary >Our Products</summary>
               <ul class="p-2 bg-indigo-900">
-                <li><a>Concrete Admixture</a></li>
-                <li><a>Protection And Repair</a></li>
+                <details x-data="{ open: false }" class="p-2">
+                  <summary @click="open = !open" class="cursor-pointer">Concrete Admixture</summary>
+                  <ul class="p-2 bg-indigo-900 nested-list" x-show="open">
+                    <li><a href="./pages/vista_iwa.html">Vista - IWA</a></li>
+                    <li><a href="#">Vista no 1</a></li>
+                    <li><a href="#">Vista no 2</a></li>
+                    <li><a href="#">Vista no 3</a></li>
+                  </ul>
+                </details>
+                <details x-data="{ open: false }" class="p-2">
+                  <summary @click="open = !open" class="cursor-pointer">Protection and Repair</summary>
+                  <ul class="p-2 bg-indigo-900 nested-list" x-show="open">
+                    <li><a href="">Vista Super Latex - SBR</a></li>
+                    <li><a href="#">Vista Supercrete</a></li>
+                    <li><a href="#">Vista Rust Stop</a></li>
+                    <li><a href="#">Vista Damp Coat</a></li>
+                  </ul>
+                </details>
+                
+                
               </ul>
             </details>
           </li>
@@ -144,10 +167,14 @@
             Our
             journey continues as we strive to ensure dry and secure properties for all our valued clients.
 
-            Established in 2018, Sheel Waterproofing has been at the forefront of the waterproofing industry for over a decade. Founded by Mr. Shankar Karki, our company began with a vision to provide effective and reliable waterproofing solutions to protect properties from water damage. With a team of skilled professionals and a commitment to innovation, we have grown into a trusted name in the industry. Our journey continues as we strive to ensure dry and secure properties for all our valued clients.
-          
-          
-          
+            Established in 2018, Sheel Waterproofing has been at the forefront of the waterproofing industry for over a
+            decade. Founded by Mr. Shankar Karki, our company began with a vision to provide effective and reliable
+            waterproofing solutions to protect properties from water damage. With a team of skilled professionals and a
+            commitment to innovation, we have grown into a trusted name in the industry. Our journey continues as we
+            strive to ensure dry and secure properties for all our valued clients.
+
+
+
           </p>
         </div>
       </div>
@@ -209,13 +236,15 @@
 
   <!-- Our services Start -->
   <div class="px-8 lg:px-32">
-    <div class=""><p class="pt-10 pb-5 text-xl lg:text-2xl font-medium text-center lg:text-left">Our Services</p></div>
+    <div class="">
+      <p class="pt-10 pb-5 text-xl lg:text-2xl font-medium text-center lg:text-left">Our Services</p>
+    </div>
     <div class="flex flex-wrap justify-center gap-12 lg:w-104">
 
 
       <!-- service card 1 -->
       <div
-        class="card w-96 bg-white text-black shadow-xl  hover:scale-105 transition-all duration-300 ease-in-out transform-gpu  cursor-pointer ">
+        class="card md:w-96  bg-white text-black shadow-xl  hover:scale-105 transition-all duration-300 ease-in-out transform-gpu  cursor-pointer ">
         <div class="card-body">
           <figure class="rounded-md"><img src="./src/assets/img/img_service_cementitious_waterproofing.jpeg"
               alt="Shoes" />
@@ -231,7 +260,7 @@
       </div>
       <!-- service card 2 -->
       <div
-        class="card w-96 bg-white text-black shadow-xl hover:scale-105 transition-all duration-300 ease-in-out transform-gpu cursor-pointer">
+        class="card md:w-96 bg-white text-black shadow-xl hover:scale-105 transition-all duration-300 ease-in-out transform-gpu cursor-pointer">
         <div class="card-body">
           <figure class="rounded-md"><img src="./src/assets/img/img_service_bituminous_coating.jpeg" alt="Shoes" />
           </figure>
@@ -246,7 +275,7 @@
       </div>
       <!-- service card 3 -->
       <div
-        class="card w-96 bg-white text-black shadow-xl hover:scale-105 transition-all duration-300 ease-in-out transform-gpu  cursor-pointer">
+        class="card md:w-96 bg-white text-black shadow-xl hover:scale-105 transition-all duration-300 ease-in-out transform-gpu  cursor-pointer">
         <div class="card-body">
           <figure class="rounded-md"><img src="./src/assets/img/img_service_cementitious_waterproofing.jpeg"
               alt="Shoes" />
@@ -262,7 +291,7 @@
       </div>
       <!-- service card 4 -->
       <div
-        class="card w-96 bg-white text-black shadow-xl hover:scale-105 transition-all duration-300 ease-in-out transform-gpu cursor-pointer">
+        class="card md:w-96 bg-white text-black shadow-xl hover:scale-105 transition-all duration-300 ease-in-out transform-gpu cursor-pointer">
         <div class="card-body">
           <figure class="rounded-md"><img src="./src/assets/img/img_service_cementitious_waterproofing.jpeg"
               alt="Shoes" />
@@ -281,7 +310,7 @@
 
       <!--service card 5 -->
       <div
-        class="card w-96 bg-white text-black shadow-xl hover:scale-105 transition-all duration-300 ease-in-out transform-gpu cursor-pointer">
+        class="card md:w-96 bg-white text-black shadow-xl hover:scale-105 transition-all duration-300 ease-in-out transform-gpu cursor-pointer">
         <div class="card-body">
           <figure class="rounded-md"><img src="./src/assets/img/img_service_cementitious_waterproofing.jpeg"
               alt="Shoes" />
@@ -296,7 +325,7 @@
       </div>
       <!-- service card 6 -->
       <div
-        class="card w-96 bg-white text-black shadow-xl hover:scale-105 transition-all duration-300 ease-in-out transform-gpu cursor-pointer">
+        class="card md:w-96 bg-white text-black shadow-xl hover:scale-105 transition-all duration-300 ease-in-out transform-gpu cursor-pointer">
         <div class="card-body">
           <figure class="rounded-md"><img src="./src/assets/img/img_service_cementitious_waterproofing.jpeg"
               alt="Shoes" />
@@ -312,7 +341,7 @@
       </div>
       <!-- service card 7 -->
       <div
-        class="card w-96 bg-white text-black shadow-xl hover:scale-105 transition-all duration-300 ease-in-out transform-gpu cursor-pointer">
+        class="card md:w-96 bg-white text-black shadow-xl hover:scale-105 transition-all duration-300 ease-in-out transform-gpu cursor-pointer">
         <div class="card-body">
           <figure class="rounded-md"><img src="./src/assets/img/img_service_cementitious_waterproofing.jpeg"
               alt="Shoes" />
@@ -326,7 +355,7 @@
       </div>
       <!-- service card 8 -->
       <div
-        class="card w-96 bg-white text-black shadow-xl hover:scale-105 transition-all duration-300 ease-in-out transform-gpu cursor-pointer">
+        class="card md:w-96 bg-white text-black shadow-xl hover:scale-105 transition-all duration-300 ease-in-out transform-gpu cursor-pointer">
         <div class="card-body">
           <figure class="rounded-md"><img src="./src/assets/img/img_service_cementitious_waterproofing.jpeg"
               alt="Shoes" />
@@ -348,8 +377,8 @@
   <!-- words from our ceo starts -->
   <div class="px-8 lg:px-32 mt-10 grid grid-cols-12 bg-purple-900 p-4">
     <div class="col-span-12 lg:col-span-4">
-      <figure  class="rounded-lg">
-        <img  src="./src/assets/img/img_service_bituminous_coating.jpeg" alt="">
+      <figure class="rounded-lg">
+        <img src="./src/assets/img/img_service_bituminous_coating.jpeg" alt="">
       </figure>
     </div>
     <div class="col-span-12 lg:col-span-7 lg:col-start-6">
@@ -359,11 +388,13 @@
         </div>
         <div class="text-justify">
           <p>Dear Valued Customers, Welcome to Sheel Waterproofing, where excellence meets waterproofing expertise!
-          As the CEO, I'm proud to lead a team dedicated to providing cutting-edge solutions for your waterproofing needs.
+            As the CEO, I'm proud to lead a team dedicated to providing cutting-edge solutions for your waterproofing
+            needs.
           </p>
           <br>
           <p>Our commitment to quality, innovation, and customer satisfaction is unmatched.
-            Explore our website to discover how Sheel Waterproofing can protect your investments and ensure a watertight future for your projects.
+            Explore our website to discover how Sheel Waterproofing can protect your investments and ensure a watertight
+            future for your projects.
           </p>
           <br>
           <p>Best regards,</p>
@@ -374,8 +405,6 @@
 
     </div>
   </div>
-
-
   <!-- words from our ceo ends -->
 
 
@@ -389,17 +418,17 @@
     <div class="px-8 lg:px-32">
       <p class=" text-xl lg:text-2xl font-medium">Contact Us</p>
     </div>
-    <div class="md:flex md:flex-row md:justify-center gap-4  px-8 lg:px-32 ">
+    <div class="md:flex md:flex-row md:justify-center md:items-center gap-4  px-8 lg:px-32 ">
       <div class="md:w-1/2">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3533.071834163048!2d85.2975386!3d27.6841746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb196a27a33541%3A0x6f2ba68dd5c4ed69!2sYuki%20Enterprises%20Pvt%20Ltd!5e0!3m2!1sen!2snp!4v1705600583898!5m2!1sen!2snp"
-          width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
 
       <div class="md:w-1/2">
         <div>
-          <p class="pt-10 text-xl lg:text-2xl font-medium">Enquire Now</p>
+          <p class="text-xl lg:text-2xl text-center font-medium ">Enquire Now</p>
         </div>
         <form action="mailto:yukienterprises@gmail.com" method="get" class="flex flex-col gap-4">
           <input type="text" placeholder="Name" class="bg-white input input-bordered w-full " />
@@ -451,6 +480,7 @@
   </div>
 
   <script type="module" src="/src/main.ts"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
 </body>
 
 </html>
