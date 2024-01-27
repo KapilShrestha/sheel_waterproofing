@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // Load default content on page load
-  fetchAndInsertContent('../pages/vista_sbr_latex_plus.html');
+  fetchAndInsertContent('../pages/vista_superplast_hs.html');
 
 });
 
