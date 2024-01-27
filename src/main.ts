@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // Load default content on page load
-  fetchAndInsertContent('../pages/vista_superplast_hs.html');
+  fetchAndInsertContent('../pages/vista_power_silica_fume.html');
 
 });
 
