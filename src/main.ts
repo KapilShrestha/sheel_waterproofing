@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // Load default content on page load
-  fetchAndInsertContent('../pages/index_content.html');
+  fetchAndInsertContent('../pages/vista_no_3.html');
 
 });
 
