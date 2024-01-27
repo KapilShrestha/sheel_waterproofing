@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host 192.168.1.68",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
@@ -17,6 +17,7 @@
     "vite": "^5.0.8"
   },
   "dependencies": {
+    "@types/googlemaps": "^3.43.3",
     "remixicon": "^4.1.0",
     "ts-node": "^10.9.2"
   }
