@@ -109,6 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
    // Function to scroll to the Contact section
    function scrollToContact() {
+    fetchAndInsertContent('../pages/index_content.html');
     const contactSection = document.getElementById('contact-section');
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: 'smooth' });
