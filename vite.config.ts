@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import { resolve } from 'path';
 
 export default defineConfig({
+    base: './',
     build: {
         outDir: './dist', // Specify the output directory
         assetsDir: './src/assets', // Assets folder is the root
