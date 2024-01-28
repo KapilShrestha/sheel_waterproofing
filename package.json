@@ -20,5 +20,23 @@
     "@types/googlemaps": "^3.43.3",
     "remixicon": "^4.1.0",
     "ts-node": "^10.9.2"
+  },
+  "vite": {
+    "build": {
+      "rollupOptions": {
+        "input": {
+          "main": "./src/main.ts", 
+          "index": "./index.html",
+          "index_content": "./pages/index_content.html",
+          "vista_afa_super": "./pages/vista_afa_super.html",
+          "vista_iwa": "./pages/vista_iwa.html",
+          "vista_no_2": "./pages/vista_no_2.html",
+          "vista_no_3": "./pages/vista_no_3.html",
+          "vista_power_silica_fume": "./pages/vista_power_silica_fume.html",
+          "vista_sbr_latex_plus": "./pages/vista_sbr_latex_plus.html",
+          "vista_superplast_hs": "./pages/vista_superplast_hs.html"
+        }
+      }
+    }
   }
 }
