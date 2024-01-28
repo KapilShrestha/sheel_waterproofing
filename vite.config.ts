@@ -3,8 +3,8 @@ import { resolve } from 'path';
 
 export default defineConfig({
     build: {
-        outDir: 'dist', // Specify the output directory
-        assetsDir: './src/assets/img', // Assets folder is the root
+        outDir: './dist', // Specify the output directory
+        assetsDir: './src/assets', // Assets folder is the root
         rollupOptions: {
             input: {
                 main: resolve(__dirname, 'index.html'), // Entry point of your application
@@ -24,7 +24,7 @@ export default defineConfig({
         include: ['@vue/runtime-core', 'vue-router'], // Add any dependencies here
     },
     root: './', // Specify the root directory for resolving input and output paths
-    publicDir: 'public',
+    publicDir: './public',
     server: {
         open: true, // Automatically open the browser when the server starts
     },
