@@ -33,9 +33,9 @@
             </svg>
           </div>
           <ul tabindex="0" class="menu menu-sm dropdown-content p-2 z-[2]  shadow bg-purple-900 rounded-box w-60 ">
-            <li class="navbar-item cursor-pointer" data-page="./pages/index_content.html"><a>Home</a></li>
-            <li id="about-link-sm"  class="navbar-item cursor-pointer" data-page="./pages/index_content.html"><a>About</a></li>
-            <li id="services-link-sm" class="navbar-item cursor-pointer" data-page="./pages/index_content.html"><a>Services</a></li>
+            <li  class="navbar-item cursor-pointer" data-page="./pages/index_content.html"><a>Home</a></li>
+            <li  class="navbar-item cursor-pointer" data-page="./pages/index_content.html#about"><a>About</a></li>
+            <li  class="navbar-item cursor-pointer" data-page="./pages/index_content.html#services"><a>Services</a></li>
 
             <li>
               <details>
@@ -47,7 +47,7 @@
                       <li class="navbar-item cursor-pointer" data-page="./pages/vista_iwa.html"><a>Vista - IWA</a></li>
                       <li class="navbar-item cursor-pointer" data-page="./pages/vista_no_1.html"><a>Vista no 1</a></li>
                       <li class="navbar-item cursor-pointer" data-page="./pages/vista_no_2.html"><a>Vista no 2</a></li>
-                      <li class="navbar-item cursor-pointer"  data-page="./pages/vista_no_3.html"><a>Vista no 3</a></li>
+                      <li class="navbar-item cursor-pointer" data-page="./pages/vista_no_3.html"><a>Vista no 3</a></li>
                     </ul>
                   </details>
                   <details x-data="{ open: false }" class="p-2">
@@ -68,7 +68,7 @@
                 </ul>
               </details>
             </li>
-            <li id="contact-link-sm" class="navbar-item cursor-pointer" data-page="./pages/index_content.html"><a>Contact Us</a></li>
+            <li><a>Contact Us</a></li>
 
           </ul>
         </div>
@@ -80,8 +80,8 @@
       <div class="navbar-center hidden lg:flex z-20">
         <ul class="menu menu-horizontal px-1">
           <li class="navbar-item cursor-pointer" data-page="./pages/index_content.html"><a>Home</a></li>
-          <li class="navbar-item cursor-pointer" id="about-link"  data-page="./pages/index_content.html"><a>About</a></li>
-          <li class="navbar-item cursor-pointer" id="services-link" data-page="./pages/index_content.html"><a>Services</a></li>
+          <li class="navbar-item cursor-pointer"  onclick="scrollToAbout()"><a>About</a></li>
+          <li class="navbar-item cursor-pointer"  data-page="./pages/index_content.html#services"><a>Services</a></li>
 
           <li>
             <details>
@@ -115,7 +115,7 @@
               </ul>
             </details>
           </li>
-          <li class="navbar-item cursor-pointer" id="contact-link" data-page="./pages/index_content.html"><a>Contact Us</a></li>
+          <li><a>Contact Us</a></li>
         </ul>
       </div>
 
