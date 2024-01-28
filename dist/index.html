@@ -1,0 +1,229 @@
+<!-- sheel_waterproofing/index.html -->
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@500&family=Montserrat:wght@300&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" />
+
+
+  <title>Homepage &#x2022; Sheel Waterproofing</title>
+  <script type="module" crossorigin src="/assets/index-F5ia6vM-.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index--wxmiAgO.css">
+</head>
+
+<body class="font-montserrat">
+  <!-- navbar starts -->
+  <nav id="navbar" class="z-20 fixed w-[100%] text-white">
+    <div class="navbar bg-purple-900">
+      <div class="navbar-start">
+        <div class="dropdown dropdown-hover ">
+          <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+            </svg>
+          </div>
+          <ul tabindex="0" class="menu menu-sm dropdown-content p-2 z-[2]  shadow bg-purple-900 rounded-box w-60 ">
+            <li class="navbar-item cursor-pointer" data-page="./pages/index_content.html"><a>Home</a></li>
+            <li id="about-link-sm"  class="navbar-item cursor-pointer" data-page="./pages/index_content.html"><a>About</a></li>
+            <li id="services-link-sm" class="navbar-item cursor-pointer" data-page="./pages/index_content.html"><a>Services</a></li>
+
+            <li>
+              <details>
+                <summary>Our Products</summary>
+                <ul class="p-2">
+                  <details x-data="{ open: false }" class="p-2">
+                    <summary @click="open = !open" class="cursor-pointer">Concrete Admixture</summary>
+                    <ul class="nested-list pt-2" x-show="open">
+                      <li class="navbar-item cursor-pointer" data-page="./pages/vista_iwa.html"><a>Vista - IWA</a></li>
+                      <li class="navbar-item cursor-pointer" data-page="./pages/vista_no_1.html"><a>Vista no 1</a></li>
+                      <li class="navbar-item cursor-pointer" data-page="./pages/vista_no_2.html"><a>Vista no 2</a></li>
+                      <li class="navbar-item cursor-pointer"  data-page="./pages/vista_no_3.html"><a>Vista no 3</a></li>
+                    </ul>
+                  </details>
+                  <details x-data="{ open: false }" class="p-2">
+                    <summary @click="open = !open" class="cursor-pointer">Protection and Repair</summary>
+                    <ul class="p-2 nested-list" x-show="open">
+                      <li class="navbar-item cursor-pointer" data-page="./pages/vista_super_latex.html"><a>Vista Super
+                          Latex - SBR</a></li>
+                      <li class="navbar-item cursor-pointer" data-page="./pages/vista_supercrete.html"><a>Vista
+                          Supercrete</a></li>
+                      <li class="navbar-item cursor-pointer" data-page="./pages/vista_rust_stop.html"><a>Vista Rust
+                          Stop</a></li>
+                      <li class="navbar-item cursor-pointer" data-page="./pages/vista_damp_coat.html"><a>Vista Damp
+                          Coat</a></li>
+                    </ul>
+                  </details>
+
+
+                </ul>
+              </details>
+            </li>
+            <li id="contact-link-sm" class="navbar-item cursor-pointer" data-page="./pages/index_content.html"><a>Contact Us</a></li>
+
+          </ul>
+        </div>
+        <a class="btn btn-ghost text-xl">Sheel Waterproofing</a>
+      </div>
+
+
+      <!-- large screen navbar -->
+      <div class="navbar-center hidden lg:flex z-20">
+        <ul class="menu menu-horizontal px-1">
+          <li class="navbar-item cursor-pointer" data-page="./pages/index_content.html"><a>Home</a></li>
+          <li class="navbar-item cursor-pointer" id="about-link"  data-page="./pages/index_content.html"><a>About</a></li>
+          <li class="navbar-item cursor-pointer" id="services-link" data-page="./pages/index_content.html"><a>Services</a></li>
+
+          <li>
+            <details>
+              <summary>Our Products</summary>
+              <ul class="p-2 bg-purple-900" style="margin:0">
+                <details x-data="{ open: false }" class="p-2">
+                  <summary @click="open = !open" class="cursor-pointer">Concrete Admixture</summary>
+                  <ul class="p-2  nested-list" x-show="open">
+                    <li class="navbar-item cursor-pointer" data-page="./pages/vista_iwa.html"><a>Vista - IWA</a></li>
+                    <li class="navbar-item cursor-pointer" data-page="./pages/vista_no_1.html"><a>Vista no 1</a></li>
+                    <li class="navbar-item cursor-pointer" data-page="./pages/vista_no_2.html"><a>Vista no 2</a></li>
+                    <li class="navbar-item cursor-pointer" data-page="./pages/vista_no_3.html"><a>Vista no 3</a></li>
+                    <li class="navbar-item cursor-pointer" data-page="./pages/vista_superplast_hs.html"><a>Vista Superplast HS</a></li>
+                  </ul>
+                </details>
+                <details x-data="{ open: false }" class="p-2">
+                  <summary @click="open = !open" class="cursor-pointer">Protection and Repair</summary>
+                  <ul class="p-2 nested-list" x-show="open">
+                    <li class="navbar-item cursor-pointer" data-page="./pages/vista_super_latex.html"><a>Vista Super
+                        Latex - SBR</a></li>
+                    <li class="navbar-item cursor-pointer" data-page="./pages/vista_supercrete.html"><a>Vista
+                        Supercrete</a></li>
+                    <li class="navbar-item cursor-pointer" data-page="./pages/vista_rust_stop.html"><a>Vista Rust
+                        Stop</a></li>
+                    <li class="navbar-item cursor-pointer" data-page="./pages/vista_damp_coat.html"><a>Vista Damp
+                        Coat</a></li>
+                  </ul>
+                </details>
+
+
+              </ul>
+            </details>
+          </li>
+          <li class="navbar-item cursor-pointer" id="contact-link" data-page="./pages/index_content.html#contact-section"><a>Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- <div  class="relative w-full max-w-xs ">
+        <input id="search-input" type="text" placeholder="Search" class="input input-bordered input-primary w-full bg-white" />
+        <i class="ri-search-line absolute top-1/2 right-4 transform -translate-y-1/2"></i>
+      </div> -->
+      
+
+      <div class="navbar-end">
+        <!-- <a class="btn">Button</a> -->
+        <div class="drawer-content ">
+          <!-- Page content here -->
+          <label for="my-drawer" class="drawer-button cursor-pointer text-2xl pr-8"><i class="ri-information-fill"></i></label>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Drawer Sidebar from left -->
+  <div class="drawer z-30 ">
+    <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+
+    <div class="drawer-side">
+      <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+      <div class="menu w-80 min-h-full bg-purple-900 text-white text-xl">
+        <!-- Sidebar content here -->
+        <div class="flex flex-col items-center pt-10">
+          <div class="text-4xl"><i class="ri-phone-line"></i></div>
+          <div>
+            <p>Phone Number</p>
+          </div>
+          <div><a href="tel:+9779845683469">+977-9845683469</a></div>
+        </div>
+
+        <div class="flex flex-col items-center pt-10">
+          <div class="text-4xl"><i class="ri-mail-line"></i></div>
+          <div>
+            <p>Email</p>
+          </div>
+          <div><a href="mailto:yukienterprises@gmail.com">yukienterprises@gmail.com</a></div>
+        </div>
+
+        <div class="flex flex-col items-center pt-10">
+          <div class="text-4xl"><i class="ri-map-pin-line"></i></div>
+          <div>
+            <p>Office Address</p>
+          </div>
+          <div><a>Balkhu</a></div>
+        </div>
+
+        <!-- social media -->
+
+        <div class="flex justify-center gap-4 text-4xl pt-10">
+          <a href="" target="_blank"><i class="ri-facebook-circle-line"></i></a>
+          <a href="" target="_blank"><i class="ri-twitter-x-fill"></i></a>
+          <a href="" target="_blank"><i class="ri-instagram-line"></i></a>
+          <a href="" target="_blank"><i class="ri-linkedin-box-fill"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- contents of different pages -->
+  <div id="insertedContent">
+
+  </div>
+
+
+
+  <!-- footer starts -->
+  <footer class="footer p-10 text-white bg-purple-900  pt-10 px-8 lg:px-32">
+    <aside>
+      <svg width="50" height="50" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
+        clip-rule="evenodd" class="fill-current">
+        <path
+          d="M22.672 15.226l-2.432.811.841 2.515c.33 1.019-.209 2.127-1.23 2.456-1.15.325-2.148-.321-2.463-1.226l-.84-2.518-5.013 1.677.84 2.517c.391 1.203-.434 2.542-1.831 2.542-.88 0-1.601-.564-1.86-1.314l-.842-2.516-2.431.809c-1.135.328-2.145-.317-2.463-1.229-.329-1.018.211-2.127 1.231-2.456l2.432-.809-1.621-4.823-2.432.808c-1.355.384-2.558-.59-2.558-1.839 0-.817.509-1.582 1.327-1.846l2.433-.809-.842-2.515c-.33-1.02.211-2.129 1.232-2.458 1.02-.329 2.13.209 2.461 1.229l.842 2.515 5.011-1.677-.839-2.517c-.403-1.238.484-2.553 1.843-2.553.819 0 1.585.509 1.85 1.326l.841 2.517 2.431-.81c1.02-.33 2.131.211 2.461 1.229.332 1.018-.21 2.126-1.23 2.456l-2.433.809 1.622 4.823 2.433-.809c1.242-.401 2.557.484 2.557 1.838 0 .819-.51 1.583-1.328 1.847m-8.992-6.428l-5.01 1.675 1.619 4.828 5.011-1.674-1.62-4.829z">
+        </path>
+      </svg>
+      <p>Sheel Waterproofing<br />Providing reliable tech since 1992</p>
+    </aside>
+    <nav>
+      <header class="footer-title">Services</header>
+      <a class="link link-hover">Branding</a>
+      <a class="link link-hover">Design</a>
+      <a class="link link-hover">Marketing</a>
+      <a class="link link-hover">Advertisement</a>
+    </nav>
+    <nav>
+      <header class="footer-title">Company</header>
+      <a class="link link-hover">About us</a>
+      <a class="link link-hover">Contact</a>
+      <a class="link link-hover">Jobs</a>
+      <a class="link link-hover">Press kit</a>
+    </nav>
+    <nav>
+      <header class="footer-title">Legal</header>
+      <a class="link link-hover">Terms of use</a>
+      <a class="link link-hover">Privacy policy</a>
+      <a class="link link-hover">Cookie policy</a>
+    </nav>
+  </footer>
+  <!-- footer ends -->
+
+
+  <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjYMFIG3NcWDx8ft8RhDsCY7tC5euxAcQ&callback=initMap" ></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
+  
+
+
+</html>
