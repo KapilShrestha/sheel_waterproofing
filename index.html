@@ -1,6 +1,6 @@
 <!-- sheel_waterproofing/index.html -->
 <!doctype html>
-<html lang="en"> 
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
@@ -14,8 +14,8 @@
   <link rel="stylesheet" href="./src/styles/index.css">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" />
-  
-  
+
+
   <link rel="stylesheet" href="./src/styles/main.css">
   <!-- <script type="module" src="/src/main.ts"></script> -->
   <title>Homepage &#x2022; Sheel Waterproofing</title>
@@ -35,8 +35,10 @@
           </div>
           <ul tabindex="0" class="menu menu-sm dropdown-content p-2 z-[2]  shadow bg-purple-900 rounded-box w-60 ">
             <li class="navbar-item cursor-pointer" data-page="./pages/index_content.html"><a>Home</a></li>
-            <li id="about-link-sm"  class="navbar-item cursor-pointer" data-page="./pages/index_content.html"><a>About</a></li>
-            <li id="services-link-sm" class="navbar-item cursor-pointer" data-page="./pages/index_content.html"><a>Services</a></li>
+            <li id="about-link-sm" class="navbar-item cursor-pointer" data-page="./pages/index_content.html">
+              <a>About</a></li>
+            <li id="services-link-sm" class="navbar-item cursor-pointer" data-page="./pages/index_content.html">
+              <a>Services</a></li>
 
             <li>
               <details>
@@ -48,7 +50,7 @@
                       <li class="navbar-item cursor-pointer" data-page="./pages/vista_iwa.html"><a>Vista - IWA</a></li>
                       <li class="navbar-item cursor-pointer" data-page="./pages/vista_no_1.html"><a>Vista no 1</a></li>
                       <li class="navbar-item cursor-pointer" data-page="./pages/vista_no_2.html"><a>Vista no 2</a></li>
-                      <li class="navbar-item cursor-pointer"  data-page="./pages/vista_no_3.html"><a>Vista no 3</a></li>
+                      <li class="navbar-item cursor-pointer" data-page="./pages/vista_no_3.html"><a>Vista no 3</a></li>
                     </ul>
                   </details>
                   <details x-data="{ open: false }" class="p-2">
@@ -69,7 +71,10 @@
                 </ul>
               </details>
             </li>
-            <li id="contact-link-sm" class="navbar-item cursor-pointer" data-page="./pages/index_content.html"><a>Contact Us</a></li>
+            <li id="contact-link-sm" class="navbar-item cursor-pointer" data-page="./pages/index_content.html">
+              <a>Contact Us</a></li>
+            <input type="text" id="searchInputSm" placeholder="Search"
+              class="input input-bordered input-primary w-full max-w-xs text-black block lg:hidden " />
 
           </ul>
         </div>
@@ -81,8 +86,10 @@
       <div class="navbar-center hidden lg:flex z-20">
         <ul class="menu menu-horizontal px-1">
           <li class="navbar-item cursor-pointer" data-page="./pages/index_content.html"><a>Home</a></li>
-          <li class="navbar-item cursor-pointer" id="about-link"  data-page="./pages/index_content.html"><a>About</a></li>
-          <li class="navbar-item cursor-pointer" id="services-link" data-page="./pages/index_content.html"><a>Services</a></li>
+          <li class="navbar-item cursor-pointer" id="about-link" data-page="./pages/index_content.html"><a>About</a>
+          </li>
+          <li class="navbar-item cursor-pointer" id="services-link" data-page="./pages/index_content.html">
+            <a>Services</a></li>
 
           <li>
             <details>
@@ -95,7 +102,8 @@
                     <li class="navbar-item cursor-pointer" data-page="./pages/vista_no_1.html"><a>Vista no 1</a></li>
                     <li class="navbar-item cursor-pointer" data-page="./pages/vista_no_2.html"><a>Vista no 2</a></li>
                     <li class="navbar-item cursor-pointer" data-page="./pages/vista_no_3.html"><a>Vista no 3</a></li>
-                    <li class="navbar-item cursor-pointer" data-page="./pages/vista_superplast_hs.html"><a>Vista Superplast HS</a></li>
+                    <li class="navbar-item cursor-pointer" data-page="./pages/vista_superplast_hs.html"><a>Vista
+                        Superplast HS</a></li>
                   </ul>
                 </details>
                 <details x-data="{ open: false }" class="p-2">
@@ -109,28 +117,28 @@
                         Stop</a></li>
                     <li class="navbar-item cursor-pointer" data-page="./pages/vista_damp_coat.html"><a>Vista Damp
                         Coat</a></li>
+
                   </ul>
                 </details>
               </ul>
             </details>
           </li>
-          <li class="navbar-item cursor-pointer" id="contact-link" data-page="./pages/index_content.html#contact-section"><a>Contact Us</a></li>
+          <li class="navbar-item cursor-pointer" id="contact-link"
+            data-page="./pages/index_content.html#contact-section"><a>Contact Us</a></li>
         </ul>
       </div>
-      <input type="text" id="searchInput" placeholder="Search" class="input input-bordered input-primary w-full max-w-xs text-black" />
-
-
-      <!-- <div  class="relative w-full max-w-xs ">
-        <input id="search-input" type="text" placeholder="Search" class="input input-bordered input-primary w-full bg-white" />
-        <i class="ri-search-line absolute top-1/2 right-4 transform -translate-y-1/2"></i>
-      </div> -->
       
-
-      <div class="navbar-end">
+      
+      
+      
+      
+      <div class="navbar-end flex gap-4">
+        <input type="text" id="searchInput" placeholder="Search" class="input input-bordered input-primary w-full max-w-xs text-black hidden lg:block" />
         <!-- <a class="btn">Button</a> -->
         <div class="drawer-content ">
           <!-- Page content here -->
-          <label for="my-drawer" class="drawer-button cursor-pointer text-2xl pr-8"><i class="ri-information-fill"></i></label>
+          <label for="my-drawer" class="drawer-button cursor-pointer text-2xl pr-8"><i
+              class="ri-information-fill"></i></label>
         </div>
       </div>
     </div>
@@ -225,7 +233,7 @@
   <script type="module" src="/src/main.ts"></script>
   <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjYMFIG3NcWDx8ft8RhDsCY7tC5euxAcQ&callback=initMap" ></script> -->
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
-  
+
 
 
 </html>

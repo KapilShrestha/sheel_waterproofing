@@ -1,87 +1,81 @@
 // sheel_waterproofing/src/main.ts
 
 
-
-
-
-
 document.addEventListener('DOMContentLoaded', function () {
-
 
    // Function for search
    function search(query: string) {
     console.log("search function called");
-    const elements = document.querySelectorAll('.searchable'); // Assuming elements with class 'searchable' contain searchable content
 
-    elements.forEach((element) => {
-        const text = element.textContent?.toLowerCase(); // Use optional chaining to handle possible null value
-        if (text && text.includes(query.toLowerCase())) { // Check if text is not null
-            (element as HTMLElement).style.display = 'block'; // No need to cast to HTMLElement, element is already of type HTMLElement
-            
-            // Scroll to the element where the searched word lies
-            const regex = new RegExp(query.toLowerCase(), 'g');
-            const match = text?.match(regex);
-            if (match && match.length > 0) {
-                const position = text?.indexOf(match[0]); // Find the position of the first occurrence of the searched word
-                if (position !== undefined && position !== -1) {
-                    element.scrollIntoView({ behavior: 'smooth', block: 'center' }); // Scroll to the element
-                }
+    // Remove existing highlights
+    removeHighlights();
+
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null);
+    const occurrences: Text[] = [];
+
+    // Find occurrences and highlight them
+    while (walker.nextNode()) {
+        const textNode = walker.currentNode as Text;
+        const parentNode = textNode.parentNode;
+
+        if (parentNode && parentNode.nodeName !== "SCRIPT" && parentNode.nodeName !== "STYLE") {
+            const textContent = textNode.textContent || "";
+            const lowerCaseContent = textContent.toLowerCase();
+
+            if (lowerCaseContent.includes(query.toLowerCase())) {
+                const regex = new RegExp(`(${query})`, 'gi');
+                const highlightedText = textContent.replace(regex, '<span class="bg-yellow-200">$1</span>');
+                const span = document.createElement("span");
+                span.innerHTML = highlightedText;
+                parentNode.replaceChild(span, textNode);
+                occurrences.push(span.firstChild as Text);
             }
-        } else {
-            (element as HTMLElement).style.display = 'none'; 
+        }
+    }
 
+    // Scroll to the first occurrence of the searched word
+    if (occurrences.length > 0) {
+        const firstOccurrence = occurrences[0];
+        firstOccurrence.parentElement?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+}
+
+// Function to remove existing highlights
+function removeHighlights() {
+    const highlightedElements = document.querySelectorAll('.bg-yellow-200');
+    highlightedElements.forEach(element => {
+        const text = element.textContent || '';
+        const parent = element.parentNode;
+        if (parent) {
+            parent.replaceChild(document.createTextNode(text), element);
         }
     });
-};
+}
 
-// Attach input event listener to the search input field
-const searchInput = document.getElementById('searchInput') as HTMLInputElement;
-if (searchInput) {
-    searchInput.addEventListener('keyup', function (event) {
+  // Attach input event listener to the search input field
+  const searchInput = document.getElementById('searchInput') as HTMLInputElement;
+  const searchInputSm = document.getElementById('searchInputSm') as HTMLInputElement;
+  if (searchInput) {
+      searchInput.addEventListener('keyup', function (event) {
+          if (event.key === 'Enter') { // Check if Enter key is pressed
+              const searchTerm = searchInput.value.trim(); // Get the trimmed search term
+
+              search(searchTerm); // Call the search function with the search term
+          }
+      });
+      
+  } 
+  if (searchInputSm) {
+    searchInputSm.addEventListener('keyup', function (event) {
         if (event.key === 'Enter') { // Check if Enter key is pressed
-            const searchTerm = searchInput.value.trim(); // Get the trimmed search term
+            const searchTerm = searchInputSm.value.trim(); // Get the trimmed search term
+
             search(searchTerm); // Call the search function with the search term
         }
     });
-} else {
-    console.error('Search input field not found.');
-}
-
-
-  // // Function for search
-  // function search(query: string) {
-  //   console.log("search function called");
-  //   const elements = document.querySelectorAll('.searchable'); // Assuming elements with class 'searchable' contain searchable content
-
-  //   elements.forEach((element) => {
-  //     const text = element.textContent?.toLowerCase(); // Use optional chaining to handle possible null value
-  //     if (text && text.includes(query.toLowerCase())) { // Check if text is not null
-  //       (element as HTMLElement).style.display = 'block'; // No need to cast to HTMLElement, element is already of type HTMLElement
-  //     } 
-  //     else {
-  //       (element as HTMLElement).style.display = 'none'; // No need to cast to HTMLElement, element is already of type HTMLElement
-  //     }
-  //   });
-  // };
-
-  // // Attach input event listener to the search input field
-  // const searchInput = document.getElementById('searchInput') as HTMLInputElement;
-  // if (searchInput) {
-  //   searchInput.addEventListener('keyup', function (event) {
-  //     if (event.key === 'Enter') { // Check if Enter key is pressed
-  //       const searchTerm = searchInput.value.trim(); // Get the trimmed search term
-  //       search(searchTerm); // Call the search function with the search term
-  //     }
-  //   });
-  // } else {
-  //   console.error('Search input field not found.');
-  // }
-
-
- 
-
-
-
+  }else {
+      console.error('Search input field not found.');
+  }
 
   // dropdown in hover
   const detailsElements = document.querySelectorAll('details');
@@ -217,16 +211,8 @@ if (searchInput) {
     console.error('Contact link not found.');
   }
 
-
-
-
-
-
-
   // Load default content on page load
   fetchAndInsertContent('../pages/index_content.html');
 });
-
-
 
 
