@@ -1,6 +1,88 @@
 // sheel_waterproofing/src/main.ts
 
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', function () {
+
+
+   // Function for search
+   function search(query: string) {
+    console.log("search function called");
+    const elements = document.querySelectorAll('.searchable'); // Assuming elements with class 'searchable' contain searchable content
+
+    elements.forEach((element) => {
+        const text = element.textContent?.toLowerCase(); // Use optional chaining to handle possible null value
+        if (text && text.includes(query.toLowerCase())) { // Check if text is not null
+            (element as HTMLElement).style.display = 'block'; // No need to cast to HTMLElement, element is already of type HTMLElement
+            
+            // Scroll to the element where the searched word lies
+            const regex = new RegExp(query.toLowerCase(), 'g');
+            const match = text?.match(regex);
+            if (match && match.length > 0) {
+                const position = text?.indexOf(match[0]); // Find the position of the first occurrence of the searched word
+                if (position !== undefined && position !== -1) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'center' }); // Scroll to the element
+                }
+            }
+        } else {
+            (element as HTMLElement).style.display = 'none'; 
+
+        }
+    });
+};
+
+// Attach input event listener to the search input field
+const searchInput = document.getElementById('searchInput') as HTMLInputElement;
+if (searchInput) {
+    searchInput.addEventListener('keyup', function (event) {
+        if (event.key === 'Enter') { // Check if Enter key is pressed
+            const searchTerm = searchInput.value.trim(); // Get the trimmed search term
+            search(searchTerm); // Call the search function with the search term
+        }
+    });
+} else {
+    console.error('Search input field not found.');
+}
+
+
+  // // Function for search
+  // function search(query: string) {
+  //   console.log("search function called");
+  //   const elements = document.querySelectorAll('.searchable'); // Assuming elements with class 'searchable' contain searchable content
+
+  //   elements.forEach((element) => {
+  //     const text = element.textContent?.toLowerCase(); // Use optional chaining to handle possible null value
+  //     if (text && text.includes(query.toLowerCase())) { // Check if text is not null
+  //       (element as HTMLElement).style.display = 'block'; // No need to cast to HTMLElement, element is already of type HTMLElement
+  //     } 
+  //     else {
+  //       (element as HTMLElement).style.display = 'none'; // No need to cast to HTMLElement, element is already of type HTMLElement
+  //     }
+  //   });
+  // };
+
+  // // Attach input event listener to the search input field
+  // const searchInput = document.getElementById('searchInput') as HTMLInputElement;
+  // if (searchInput) {
+  //   searchInput.addEventListener('keyup', function (event) {
+  //     if (event.key === 'Enter') { // Check if Enter key is pressed
+  //       const searchTerm = searchInput.value.trim(); // Get the trimmed search term
+  //       search(searchTerm); // Call the search function with the search term
+  //     }
+  //   });
+  // } else {
+  //   console.error('Search input field not found.');
+  // }
+
+
+ 
+
+
+
+
   // dropdown in hover
   const detailsElements = document.querySelectorAll('details');
   detailsElements.forEach((details) => {
@@ -50,9 +132,9 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 
-   // Function to scroll to the About section
-   function scrollToAbout() {
-    
+  // Function to scroll to the About section
+  function scrollToAbout() {
+
     const aboutSection = document.getElementById('about-section');
     if (aboutSection) {
       aboutSection.scrollIntoView({ behavior: 'smooth' });
@@ -79,8 +161,8 @@ document.addEventListener('DOMContentLoaded', function () {
     console.error('About link not found.');
   }
 
-   // Function to scroll to the Services section
-   function scrollToServices() {
+  // Function to scroll to the Services section
+  function scrollToServices() {
     const servicesSection = document.getElementById('services-section');
     if (servicesSection) {
       servicesSection.scrollIntoView({ behavior: 'smooth' });
@@ -103,13 +185,12 @@ document.addEventListener('DOMContentLoaded', function () {
     servicesLinkSm.addEventListener('click', () => {
       scrollToServices();
     });
-  } else {  
+  } else {
     console.error('Services link not found.');
   }
 
-   // Function to scroll to the Contact section
-   function scrollToContact() {
-    fetchAndInsertContent('../pages/index_content.html');
+  // Function to scroll to the Contact section
+  function scrollToContact() {
     const contactSection = document.getElementById('contact-section');
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: 'smooth' });
@@ -132,17 +213,20 @@ document.addEventListener('DOMContentLoaded', function () {
     contactLinkSm.addEventListener('click', () => {
       scrollToContact();
     });
-  }else {
+  } else {
     console.error('Contact link not found.');
   }
 
 
 
 
- 
+
 
 
   // Load default content on page load
   fetchAndInsertContent('../pages/index_content.html');
-
 });
+
+
+
+
