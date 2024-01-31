@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "@types/googlemaps": "^3.43.3",
+    "flowbite": "^2.2.1",
     "remixicon": "^4.1.0",
     "ts-node": "^10.9.2"
   },
@@ -25,7 +26,7 @@
     "build": {
       "rollupOptions": {
         "input": {
-          "main": "./src/main.ts", 
+          "main": "./src/main.ts",
           "index": "./index.html",
           "index_content": "./pages/index_content.html",
           "vista_afa_super": "./pages/vista_afa_super.html",

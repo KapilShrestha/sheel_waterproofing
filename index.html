@@ -14,6 +14,8 @@
   <link rel="stylesheet" href="./src/styles/index.css">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+  
 
 
   <link rel="stylesheet" href="./src/styles/main.css">
@@ -22,6 +24,13 @@
 </head>
 
 <body class="font-montserrat">
+
+
+
+
+
+
+
   <!-- navbar starts -->
   <nav id="navbar" class="z-20 fixed w-[100%] text-white">
     <div class="navbar bg-purple-900">
@@ -36,9 +45,11 @@
           <ul tabindex="0" class="menu menu-sm dropdown-content p-2 z-[2]  shadow bg-purple-900 rounded-box w-60 ">
             <li class="navbar-item cursor-pointer" data-page="./pages/index_content.html"><a>Home</a></li>
             <li id="about-link-sm" class="navbar-item cursor-pointer" data-page="./pages/index_content.html">
-              <a>About</a></li>
+              <a>About</a>
+            </li>
             <li id="services-link-sm" class="navbar-item cursor-pointer" data-page="./pages/index_content.html">
-              <a>Services</a></li>
+              <a>Services</a>
+            </li>
 
             <li>
               <details>
@@ -72,7 +83,8 @@
               </details>
             </li>
             <li id="contact-link-sm" class="navbar-item cursor-pointer" data-page="./pages/index_content.html">
-              <a>Contact Us</a></li>
+              <a>Contact Us</a>
+            </li>
             <input type="text" id="searchInputSm" placeholder="Search"
               class="input input-bordered input-primary w-full max-w-xs text-black block lg:hidden " />
 
@@ -89,7 +101,8 @@
           <li class="navbar-item cursor-pointer" id="about-link" data-page="./pages/index_content.html"><a>About</a>
           </li>
           <li class="navbar-item cursor-pointer" id="services-link" data-page="./pages/index_content.html">
-            <a>Services</a></li>
+            <a>Services</a>
+          </li>
 
           <li>
             <details>
@@ -123,17 +136,18 @@
               </ul>
             </details>
           </li>
-          <li class="navbar-item cursor-pointer" id="contact-link"
-            data-page="./pages/index_content.html#contact-section"><a>Contact Us</a></li>
+          <li class="navbar-item cursor-pointer" id="contact-link" data-page="./pages/index_content.html"><a>Contact
+              Us</a></li>
         </ul>
       </div>
-      
-      
-      
-      
-      
+
+
+
+
+
       <div class="navbar-end flex gap-4">
-        <input type="text" id="searchInput" placeholder="Search" class="input input-bordered input-primary w-full max-w-xs text-black hidden lg:block" />
+        <input type="text" id="searchInput" placeholder="Search"
+          class="input input-bordered input-primary w-full max-w-xs text-black hidden lg:block" />
         <!-- <a class="btn">Button</a> -->
         <div class="drawer-content ">
           <!-- Page content here -->
@@ -233,6 +247,7 @@
   <script type="module" src="/src/main.ts"></script>
   <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjYMFIG3NcWDx8ft8RhDsCY7tC5euxAcQ&callback=initMap" ></script> -->
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
 
 
 
