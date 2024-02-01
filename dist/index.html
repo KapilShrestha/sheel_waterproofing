@@ -14,13 +14,13 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
-  
+
 
 
   <!-- <script type="module" src="/src/main.ts"></script> -->
   <title>Homepage &#x2022; Sheel Waterproofing</title>
-  <script type="module" crossorigin src="./src/assets/main-ndCS8lDy.js"></script>
-  <link rel="stylesheet" crossorigin href="./src/assets/main-7jIG52N9.css">
+  <script type="module" crossorigin src="./src/assets/main-Ff0HboAZ.js"></script>
+  <link rel="stylesheet" crossorigin href="./src/assets/main-8E7jMg22.css">
 </head>
 
 <body class="font-montserrat">
@@ -53,28 +53,51 @@
 
             <li>
               <details>
-                <summary>Our Products</summary>
+                <summary data-page="./pages/products.html">Our Products</summary>
                 <ul class="p-2">
                   <details x-data="{ open: false }" class="p-2">
-                    <summary @click="open = !open" class="cursor-pointer">Concrete Admixture</summary>
+                    <summary @click="open = !open" class="cursor-pointer">Waterproofing Chemical</summary>
                     <ul class="nested-list pt-2" x-show="open">
                       <li class="navbar-item cursor-pointer" data-page="./pages/vista_iwa.html"><a>Vista - IWA</a></li>
-                      <li class="navbar-item cursor-pointer" data-page="./pages/vista_no_1.html"><a>Vista no 1</a></li>
                       <li class="navbar-item cursor-pointer" data-page="./pages/vista_no_2.html"><a>Vista no 2</a></li>
                       <li class="navbar-item cursor-pointer" data-page="./pages/vista_no_3.html"><a>Vista no 3</a></li>
+                      <li class="navbar-item cursor-pointer" data-page="./pages/vista_sbr_latex_plus.html"><a>Vista SBR
+                          Latex Plus</a></li>
+                      <li class="navbar-item cursor-pointer" data-page="./pages/vista_super_crete.html"><a>Vista Super Crete</a></li>
+                      <li class="navbar-item cursor-pointer" data-page="./pages/vista_flex_seal_t.html"><a>Vista Flex
+                          Seal t</a></li>
+
                     </ul>
                   </details>
                   <details x-data="{ open: false }" class="p-2">
-                    <summary @click="open = !open" class="cursor-pointer">Protection and Repair</summary>
+                    <summary @click="open = !open" class="cursor-pointer">Concreting Aids</summary>
                     <ul class="p-2 nested-list" x-show="open">
-                      <li class="navbar-item cursor-pointer" data-page="./pages/vista_super_latex.html"><a>Vista Super
-                          Latex - SBR</a></li>
-                      <li class="navbar-item cursor-pointer" data-page="./pages/vista_supercrete.html"><a>Vista
-                          Supercrete</a></li>
-                      <li class="navbar-item cursor-pointer" data-page="./pages/vista_rust_stop.html"><a>Vista Rust
-                          Stop</a></li>
+                      <li class="navbar-item cursor-pointer" data-page="./pages/vista_power_silica_fume.html"><a>Vista
+                          Power X (microsilica)</a></li>
+                      <li class="navbar-item cursor-pointer" data-page="./pages/vista_bond_ep.html"><a>Vista Bond EP</a>
+                      </li>
+                      <li class="navbar-item cursor-pointer" data-page="./pages/vista_seal_it.html"><a>Vista Seal IT</a>
+                      </li>
                       <li class="navbar-item cursor-pointer" data-page="./pages/vista_damp_coat.html"><a>Vista Damp
                           Coat</a></li>
+                    </ul>
+                  </details>
+                  <details x-data="{ open: false }" class="p-2">
+                    <summary @click="open = !open" class="cursor-pointer">Concrete Admixture</summary>
+                    <ul class="p-2 nested-list" x-show="open">
+                      <li class="navbar-item cursor-pointer" data-page="./pages/vista_superplast_hs.html"><a>Vista
+                          Superplast Hs</a></li>
+                      <li class="navbar-item cursor-pointer" data-page="./pages/vista_superplast_hs_1000"><a>Vista
+                          Superplast HS 1000</a></li>
+                      <li class="navbar-item cursor-pointer" data-page="./pages/vista_afa_super.html"><a>Vista AFA</a>
+                      </li>
+                    </ul>
+                  </details>
+                  <details x-data="{ open: false }" class="p-2">
+                    <summary @click="open = !open" class="cursor-pointer">Crystallizing</summary>
+                    <ul class="p-2 nested-list" x-show="open">
+                      <li class="navbar-item cursor-pointer" data-page="./pages/vista_superplast_hs.html"><a>Vista
+                          Crystal 16</a></li>
                     </ul>
                   </details>
 
@@ -106,33 +129,55 @@
 
           <li>
             <details>
-              <summary>Our Products</summary>
+              <summary class="navbar-item cursor-pointer" data-page="./pages/products.html">Our Products</summary>
               <ul class="p-2 bg-purple-900" style="margin:0">
                 <details x-data="{ open: false }" class="p-2">
-                  <summary @click="open = !open" class="cursor-pointer">Concrete Admixture</summary>
-                  <ul class="p-2  nested-list" x-show="open">
-                    <li class="navbar-item cursor-pointer" data-page="./pages/vista_iwa.html"><a>Vista - IWA</a></li>
-                    <li class="navbar-item cursor-pointer" data-page="./pages/vista_no_1.html"><a>Vista no 1</a></li>
-                    <li class="navbar-item cursor-pointer" data-page="./pages/vista_no_2.html"><a>Vista no 2</a></li>
-                    <li class="navbar-item cursor-pointer" data-page="./pages/vista_no_3.html"><a>Vista no 3</a></li>
+                  <summary @click="open = !open" class="cursor-pointer">Crystallizing</summary>
+                  <ul class="p-2 nested-list" x-show="open">
                     <li class="navbar-item cursor-pointer" data-page="./pages/vista_superplast_hs.html"><a>Vista
-                        Superplast HS</a></li>
+                        Crystal 16</a></li>
                   </ul>
                 </details>
                 <details x-data="{ open: false }" class="p-2">
-                  <summary @click="open = !open" class="cursor-pointer">Protection and Repair</summary>
+                  <summary @click="open = !open" class="cursor-pointer">Concrete Admixture</summary>
                   <ul class="p-2 nested-list" x-show="open">
-                    <li class="navbar-item cursor-pointer" data-page="./pages/vista_super_latex.html"><a>Vista Super
-                        Latex - SBR</a></li>
-                    <li class="navbar-item cursor-pointer" data-page="./pages/vista_supercrete.html"><a>Vista
-                        Supercrete</a></li>
-                    <li class="navbar-item cursor-pointer" data-page="./pages/vista_rust_stop.html"><a>Vista Rust
-                        Stop</a></li>
+                    <li class="navbar-item cursor-pointer" data-page="./pages/vista_superplast_hs.html"><a>Vista
+                        Superplast Hs</a></li>
+                    <li class="navbar-item cursor-pointer" data-page="./pages/vista_superplast_hs_1000"><a>Vista
+                        Superplast HS 1000</a></li>
+                    <li class="navbar-item cursor-pointer" data-page="./pages/vista_afa_super.html"><a>Vista AFA</a>
+                    </li>
+                  </ul>
+                </details>
+                <details x-data="{ open: false }" class="p-2">
+                  <summary @click="open = !open" class="cursor-pointer">Concreting Aids</summary>
+                  <ul class="p-2 nested-list" x-show="open">
+                    <li class="navbar-item cursor-pointer" data-page="./pages/vista_power_silica_fume.html"><a>Vista
+                        Power X (microsilica)</a></li>
+                    <li class="navbar-item cursor-pointer" data-page="./pages/vista_bond_ep.html"><a>Vista Bond EP</a>
+                    </li>
+                    <li class="navbar-item cursor-pointer" data-page="./pages/vista_seal_it.html"><a>Vista Seal IT</a>
+                    </li>
                     <li class="navbar-item cursor-pointer" data-page="./pages/vista_damp_coat.html"><a>Vista Damp
                         Coat</a></li>
+                  </ul>
+                </details>
+                <details x-data="{ open: false }" class="p-2">
+                  <summary @click="open = !open" class="cursor-pointer">Waterproofing Chemical</summary>
+                  <ul class="nested-list pt-2" x-show="open">
+                    <li class="navbar-item cursor-pointer" data-page="./pages/vista_iwa.html"><a>Vista - IWA</a></li>
+                    <li class="navbar-item cursor-pointer" data-page="./pages/vista_no_2.html"><a>Vista no 2</a></li>
+                    <li class="navbar-item cursor-pointer" data-page="./pages/vista_no_3.html"><a>Vista no 3</a></li>
+                    <li class="navbar-item cursor-pointer" data-page="./pages/vista_sbr_latex_plus.html"><a>Vista SBR
+                        Latex Plus</a></li>
+                        <li class="navbar-item cursor-pointer" data-page="./pages/vista_super_crete.html"><a>Vista Super Crete</a></li>
+                    <li class="navbar-item cursor-pointer" data-page="./pages/vista_flex_seal_t.html"><a>Vista Flex
+                        Seal t</a></li>
 
                   </ul>
                 </details>
+                
+
               </ul>
             </details>
           </li>
