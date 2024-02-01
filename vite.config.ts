@@ -16,7 +16,9 @@ export default defineConfig({
                 "vista_no_3": resolve(__dirname, "./pages/vista_no_3.html"),
                 "vista_power_silica_fume": resolve(__dirname, "./pages/vista_power_silica_fume.html"),
                 "vista_sbr_latex_plus": resolve(__dirname, "./pages/vista_sbr_latex_plus.html"),
-                "vista_superplast_hs": resolve(__dirname, "./pages/vista_superplast_hs.html")
+                "vista_superplast_hs": resolve(__dirname, "./pages/vista_superplast_hs.html"),
+                "vista_super_crete": resolve(__dirname, "./pages/vista_super_crete.html"),
+                "vista_flex_seal_plus": resolve(__dirname, "./pages/vista_flex_seal_plus.html"),
             },
         },
         emptyOutDir: true, // Clear the output directory before building
