@@ -10,6 +10,7 @@ export default defineConfig({
             input: {
                 main: resolve(__dirname, 'index.html'), // Entry point of your application
                 "index_content": resolve(__dirname, "./pages/index_content.html"),
+                "products": resolve(__dirname, "./pages/products.html"),
                 "vista_afa_super": resolve(__dirname, "./pages/vista_afa_super.html"),
                 "vista_iwa": resolve(__dirname, "./pages/vista_iwa.html"),
                 "vista_no_2": resolve(__dirname, "./pages/vista_no_2.html"),
