@@ -201,7 +201,7 @@ document.addEventListener('DOMContentLoaded', function () {
     console.error('Contact link not found.');
   }
   // Load default content on page load
-  fetchAndInsertContent('../pages/products.html');
+  fetchAndInsertContent('../pages/vista_superplast_hs_1000.html');
 
 
 });
