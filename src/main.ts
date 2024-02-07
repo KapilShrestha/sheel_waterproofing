@@ -201,6 +201,6 @@ document.addEventListener('DOMContentLoaded', function () {
     console.error('Contact link not found.');
   }
   // Load default content on page load
-  fetchAndInsertContent('../pages/index_content.html');
+  fetchAndInsertContent('../pages/bituminous_waterproofing_membrane.html');
 });
 
