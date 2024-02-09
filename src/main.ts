@@ -1,11 +1,5 @@
 // sheel_waterproofing/src/main.ts
 document.addEventListener('DOMContentLoaded', function () {
-
-
-
-
-
-
   // Function for search
   function search(query: string) {
     console.log("search function called");
@@ -202,5 +196,22 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   // Load default content on page load
   fetchAndInsertContent('../pages/bituminous_waterproofing_membrane.html');
+
+ 
+  
+});
+
+window.addEventListener('scroll', function() {
+  var elements = document.querySelectorAll('.animated-content');
+
+  elements.forEach(function(element) {
+    var positionFromTop = element.getBoundingClientRect().top;
+    var screenHeight = window.innerHeight;
+
+    if (positionFromTop - screenHeight <= 0) {
+      element.classList.add('animate-fly-in-bottom');
+      element.classList.remove('opacity-0');
+    }
+  });
 });
 
