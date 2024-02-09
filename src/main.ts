@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function () {
     console.error('Contact link not found.');
   }
   // Load default content on page load
-  fetchAndInsertContent('../pages/injection_waterproofing.html');
+  fetchAndInsertContent('../pages/liquid_waterproofing_membrane.html');
 
  
   
