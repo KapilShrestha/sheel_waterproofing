@@ -1,75 +1,6 @@
 // sheel_waterproofing/src/main.ts
 document.addEventListener('DOMContentLoaded', function () {
-  // Function for search
-  function search(query: string) {
-    console.log("search function called");
-    removeHighlights();
-    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null);
-    const occurrences: Text[] = [];
-
-    // Find occurrences and highlight them
-    while (walker.nextNode()) {
-      const textNode = walker.currentNode as Text;
-      const parentNode = textNode.parentNode;
-
-      if (parentNode && parentNode.nodeName !== "SCRIPT" && parentNode.nodeName !== "STYLE") {
-        const textContent = textNode.textContent || "";
-        const lowerCaseContent = textContent.toLowerCase();
-
-        if (lowerCaseContent.includes(query.toLowerCase())) {
-          const regex = new RegExp(`(${query})`, 'gi');
-          const highlightedText = textContent.replace(regex, '<span class="bg-yellow-200">$1</span>');
-          const span = document.createElement("span");
-          span.innerHTML = highlightedText;
-          parentNode.replaceChild(span, textNode);
-          occurrences.push(span.firstChild as Text);
-        }
-      }
-    }
-
-    // Scroll to the first occurrence of the searched word
-    if (occurrences.length > 0) {
-      const firstOccurrence = occurrences[0];
-      firstOccurrence.parentElement?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  }
-
-  // Function to remove existing highlights
-  function removeHighlights() {
-    const highlightedElements = document.querySelectorAll('.bg-yellow-200');
-    highlightedElements.forEach(element => {
-      const text = element.textContent || '';
-      const parent = element.parentNode;
-      if (parent) {
-        parent.replaceChild(document.createTextNode(text), element);
-      }
-    });
-  }
-  // Attach input event listener to the search input field
-  const searchInput = document.getElementById('searchInput') as HTMLInputElement;
-  const searchInputSm = document.getElementById('searchInputSm') as HTMLInputElement;
-  if (searchInput) {
-    searchInput.addEventListener('keyup', function (event) {
-      if (event.key === 'Enter') { // Check if Enter key is pressed
-        const searchTerm = searchInput.value.trim(); // Get the trimmed search term
-
-        search(searchTerm); // Call the search function with the search term
-      }
-    });
-
-  }
-  if (searchInputSm) {
-    searchInputSm.addEventListener('keyup', function (event) {
-      if (event.key === 'Enter') { // Check if Enter key is pressed
-        const searchTerm = searchInputSm.value.trim(); // Get the trimmed search term
-
-        search(searchTerm); // Call the search function with the search term
-      }
-    });
-  } else {
-    console.error('Search input field not found.');
-  }
-  // dropdown in hover
+   // dropdown in hover
   const detailsElements = document.querySelectorAll('details');
   detailsElements.forEach((details) => {
     details.addEventListener('mouseover', function () {
@@ -195,16 +126,16 @@ document.addEventListener('DOMContentLoaded', function () {
     console.error('Contact link not found.');
   }
   // Load default content on page load
-  fetchAndInsertContent('../pages/liquid_waterproofing_membrane.html');
+  fetchAndInsertContent('../pages/index_content.html');
 
- 
-  
+
+
 });
 
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
   var elements = document.querySelectorAll('.animated-content');
 
-  elements.forEach(function(element) {
+  elements.forEach(function (element) {
     var positionFromTop = element.getBoundingClientRect().top;
     var screenHeight = window.innerHeight;
 
@@ -214,4 +145,145 @@ window.addEventListener('scroll', function() {
     }
   });
 });
+
+
+// search 
+interface Page {
+  url: string;
+  sections: string[]; // Add sections property
+}
+
+interface SearchResult {
+  pageUrl: string;
+  section: string; // Add section property
+  matches: string[];
+}
+
+class Website {
+  pages: Page[];
+
+  constructor(pages: Page[]) {
+      this.pages = pages;
+  }
+
+  async fetchPageContent(url: string): Promise<string> {
+      const response = await fetch(url);
+      const content = await response.text();
+      return content;
+  }
+
+  async search(query: string): Promise<SearchResult[]> {
+      const results: SearchResult[] = [];
+
+      for (const page of this.pages) {
+          const content = await this.fetchPageContent(page.url);
+          const matches: string[] = [];
+          const regex = new RegExp(query, 'gi');
+          let match;
+
+          // Split the content into sections
+          const sections = content.split("<!-- products card -->");
+
+          for (let i = 0; i < sections.length; i++) {
+              const sectionContent = sections[i];
+              while (match = regex.exec(sectionContent)) {
+                  matches.push(match[0]);
+                  // Push section index along with the match
+                  results.push({
+                      pageUrl: page.url,
+                      section: page.sections[i], // Store the section information
+                      matches: [match[0]]
+                  });
+              }
+          }
+      }
+
+      return results;
+  }
+}
+
+async function handleSearch(event: KeyboardEvent) {
+  if (event.key === "Enter") {
+      const searchInput = document.getElementById("searchInput") as HTMLInputElement;
+      const searchQuery = searchInput.value.trim();
+
+      // Example pages data (URLs of pages in the "pages" directory)
+      const pageURLs: string[] = [
+          "../pages/products.html",
+          "../pages/index_content.html",
+          "../pages/bituminous_waterproofing_membrane.html",
+          "../pages/cementitious_waterproofing.html",
+          "../pages/roof_waterproofing.html",
+          // Add more page URLs here
+      ];
+
+      const website = new Website([]); // Create an empty Website object
+
+      const pages: Page[] = [];
+      for (const url of pageURLs) {
+          const content = await website.fetchPageContent(url);
+          // Split the content into sections using the correct delimiter
+          const sections = content.split('<!-- products card -->'); // Adjust delimiter accordingly
+          pages.push({ url, sections }); // Include sections in the Page object
+      }
+
+      website.pages = pages; // Update the pages in the Website object
+
+      const searchResults = await website.search(searchQuery);
+
+      // Clear previous search results
+      const searchResultsContainer = document.getElementById("searchResults") as HTMLDivElement;
+      searchResultsContainer.innerHTML = '';
+
+      // Display matches for each page
+      searchResults.forEach(result => {
+          const resultElement = document.createElement("div");
+          resultElement.innerHTML = `<p>Page URL: ${result.pageUrl}</p><p>Section: ${result.section}</p>`;
+          result.matches.forEach(match => {
+              const matchElement = document.createElement("p");
+              matchElement.textContent = match;
+              resultElement.appendChild(matchElement);
+          });
+          searchResultsContainer.appendChild(resultElement);
+      });
+  }
+}
+
+
+const searchInput = document.getElementById("searchInput") as HTMLInputElement;
+searchInput.addEventListener("keydown", handleSearch);
+
+
+// Function to handle card click event
+function handleCardClick(pageUrl: string) {
+  fetch(pageUrl)
+    .then(response => response.text())
+    .then(html => {
+      // Insert the fetched content into #insertedContent
+      const insertedContent = document.getElementById('insertedContent');
+      if (insertedContent) {
+        insertedContent.innerHTML = html;
+      } else {
+        console.error('Element with id "insertedContent" not found.');
+      }
+    })
+    .catch(error => console.error('Error fetching page:', error));
+}
+
+// Add event listeners to each card
+document.querySelectorAll('.card').forEach((card: Element) => {
+  card.addEventListener('click', function(this: HTMLElement, event: Event) {
+    // Stop default behavior to prevent any unwanted action
+    event.preventDefault();
+    
+    // Get the data-page attribute value to determine the page URL
+    const pageUrl: string | null | undefined = this.getAttribute('data-page');
+    if (pageUrl !== null && pageUrl !== undefined) {
+      handleCardClick(pageUrl);
+    } else {
+      console.error('Data-page attribute not found on card element.');
+    }
+  });
+});
+
 
